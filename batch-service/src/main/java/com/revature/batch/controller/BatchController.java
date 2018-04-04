@@ -4,8 +4,6 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -213,11 +211,26 @@ public class BatchController {
 	 * @return a list of batches, Http status 200 otherwise Http status 204
 	 */
 	@GetMapping("currentbatches")
-	public List<Batch> getAllInProgress() {
+	public List<Batch> currentbatches() {
 		List<Batch> batchesInProgress = batchService.currentBatches();
 		if (batchesInProgress == null || batchesInProgress.isEmpty()) {
 			throw new NoBatchException("no batches in progress");
 		}
 		return batchesInProgress;
+	}
+	@GetMapping("allinprogress/{email}")
+	public List<Batch> getAllInProgress(@PathVariable String email) {
+		System.out.println("allinprogress/" + email);
+		List<Batch> batches = batchService.getBatchByTrainerID(trainerService.getTrainerByEmail(email));
+		System.out.println("allinprogress by email: " + batches);
+		if (batches == null) {
+			throw new NoBatchException("no batches in progress");
+		}
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		batches.removeIf(b -> t.before(b.getStartDate()) || t.after(b.getEndDate()));
+		if (batches.isEmpty()) {
+			throw new NoBatchException("no batches in progress");
+		}
+		return batches;
 	}
 }

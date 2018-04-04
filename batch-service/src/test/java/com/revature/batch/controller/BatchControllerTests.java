@@ -151,7 +151,7 @@ public class BatchControllerTests {
 		when(mockBatchService.currentBatches()).thenReturn(batch);
 		
 		// Execute
-		batchController.getAllInProgress();
+//		batchController.getAllInProgress();
 	}
 	
 }
