@@ -69,7 +69,9 @@ public class BatchType {
 
 	@Override
 	public String toString() {
-		return "BatchType [id=" + id + ", name=" + name + ", length=" + length + "]";
+		return "BatchType [\n" + "(ID) \t id =" + id + ",\n" 
+				+ "(Name) \t name =" + name + ",\n"
+				+ "(Length) \t length =" + length + ",\n]";
 	}
 
 }
