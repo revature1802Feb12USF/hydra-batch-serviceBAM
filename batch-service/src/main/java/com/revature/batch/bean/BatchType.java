@@ -23,8 +23,8 @@ public class BatchType {
 	@Column(name = "Batch_Type_Name")
 	private String name;
 
-	@Column(name = "Batch_Type_Length") // For now, this defaults to 10 and can't be changed.
-	private Integer length = 10; // In the future, this field can be editable.
+	@Column(name = "Batch_Type_Length") 
+	private Integer length = 10; 
 
 	public BatchType() {
 		super();
@@ -69,20 +69,9 @@ public class BatchType {
 
 	@Override
 	public String toString() {
-		return "BatchType [id=" + id + ", name=" + name + ", length=" + length + "]";
+		return "BatchType [\n" + "(ID) \t id =" + id + ",\n" 
+				+ "(Name) \t name =" + name + ",\n"
+				+ "(Length) \t length =" + length + ",\n]";
 	}
-	
-	
-
-//	@Override
-//	public String toString() {
-//		JSONify jsonify = new JSONify();
-//		String json = "{" + jsonify.quotify("BatchType") + ":{";
-//		json += jsonify.addKey("batchTypeID") + jsonify.addValue(id.toString());
-//		json += jsonify.addKey("batchTypeName") + jsonify.addValue(name);
-//		json += jsonify.addKey("batchTypeLength") + jsonify.addEndValue(length.toString());
-//		json += "}}";
-//		return json;
-//	}
 
 }
