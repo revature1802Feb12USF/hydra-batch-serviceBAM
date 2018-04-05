@@ -2,12 +2,10 @@ package com.revature.batch.logging;
 
 
 /**
- * 
  * @author Allan Poindexter / Batch 1712_dec11th_Java_Steve
  * 		   Charlie Harris / Batch 1712_dec11th_Java_Steve
  * 
  * Class creates simple methods to create key/value pairs for returning log output as JSON.
- *
  */
 public class JSONify {
 	/**

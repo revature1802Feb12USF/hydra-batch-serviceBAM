@@ -46,7 +46,6 @@ public class BatchController {
 	@GetMapping("all")
 	public List<Batch> getBatchAll() {
 		List<Batch> result = batchService.getBatchAll();
-
 		if (result == null || result.isEmpty()) {
 			throw new NoBatchException("No batches exist");
 		}

@@ -69,11 +69,4 @@ public class BatchService {
 		return batchRepository.findByEndDateGreaterThanAndStartDateLessThan(t, t);
 	}
 
-	/**
-	 * Populates batch using a list of curriculum subtopics.
-	 * NOTE: This method assumes all batches start on a Monday.
-	 * @author DillonT
-	 * @param currSubtopics
-	 * @param batch
-	 */
 }

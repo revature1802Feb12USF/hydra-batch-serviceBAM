@@ -35,9 +35,7 @@ public class TrainerService {
 
 	@HystrixCommand(fallbackMethod="cachedGetTrainerByEmail")
 	public Integer getTrainerByEmail(String email) {
-		System.out.println("trainer by email: " + email);
 		BamUser returner = restTemplate.getForObject("http://hydra-user-service/byEmail/" + email + "/", BamUser.class);
-		System.out.println("trainer from user service: " + returner);
 		if(returner == null)
 			return null;
 		cache.put(email, returner.getUserId());
@@ -48,12 +46,9 @@ public class TrainerService {
 	Hashtable<String, Integer> cache = new Hashtable<String, Integer> ();
 	
 	public Integer cachedGetTrainerByEmail(String email) {
-		// TODO add logging here
-		System.out.println("User-service-fallback");
 		return cache.get(email);
 	}
 
-	// testing hook to populate cache
 	public void testingAddToCache(String email, Integer trainerID) {
 		cache.put(email, trainerID);
 	}
