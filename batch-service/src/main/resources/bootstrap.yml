@@ -3,4 +3,4 @@ spring:
     name: hydra-batch-service
 #  cloud:
 #    config:
-#      uri: http://localhost:9001/
+#      uri: http://localhost:9001
