@@ -51,8 +51,7 @@ public class Batch {
 	public Batch() {
 		super();
 	}
-	
-	
+		
 	public Batch(Integer id, String name, Timestamp startDate, Timestamp endDate, Integer trainerID, BatchType type) {
 		super();
 		this.id = id;
@@ -63,8 +62,6 @@ public class Batch {
 		this.type = type;
 	}
 
-
-
 	public Batch(String name, Timestamp startDate, Timestamp endDate, Integer trainerID, BatchType type) {
 		super();
 		this.name = name;
@@ -74,89 +71,62 @@ public class Batch {
 		this.type = type;
 	}
 
-	
-
 	public Integer getId() {
 		return id;
 	}
-
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	public Timestamp getStartDate() {
 		return startDate;
 	}
-
 
 	public void setStartDate(Timestamp startDate) {
 		this.startDate = startDate;
 	}
 
-
 	public Timestamp getEndDate() {
 		return endDate;
 	}
-
 
 	public void setEndDate(Timestamp endDate) {
 		this.endDate = endDate;
 	}
 
-
 	public Integer getTrainerID() {
 		return trainerID;
 	}
-
 
 	public void setTrainerID(Integer trainerID) {
 		this.trainerID = trainerID;
 	}
 
-
 	public BatchType getType() {
 		return type;
 	}
-
 
 	public void setType(BatchType type) {
 		this.type = type;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Batch [id=" + id + ", name=" + name + ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", trainerID=" + trainerID + ", type=" + type + "]";
+		return "Batch [\n" + "(Batch ID) \t id =" + id + ",\n" 
+			+ "(Name) \t name =" + name + ",\n"
+			+ "(StartDate) \t startDate =" + startDate + ",\n"
+			+ "(EndDate) \t endDate =" + endDate +",\n"
+			+ "(TrainerID) \t trainerID =" + trainerID + ",\n"
+			+ "(Type) \t type =" + type + "\n]";
 	}
-	
-	
-
-
-//	@Override
-//	public String toString() {
-//		JSONify jsonify = new JSONify();
-//		String json = "{" + jsonify.quotify("Batches") + ":{";
-//		json += jsonify.addKey("batchesID") + jsonify.addValue(id.toString());
-//		json += jsonify.addKey("batchesName") + jsonify.addValue(name);
-//		json += jsonify.addKey("batchesStartDate") + jsonify.addValue(startDate.toString());
-//		json += jsonify.addKey("batchesEndDate") + jsonify.addValue(endDate.toString());
-//		json += jsonify.addKey("batchesTrainer") + trainerID + ",";
-//		json += jsonify.addKey("batchesType") + type;
-//		json += "}}";
-//		return json;
-//	}
-
+	                                          
 }

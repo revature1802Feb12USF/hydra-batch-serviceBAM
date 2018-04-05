@@ -40,14 +40,12 @@ public class BatchController {
 	}
 
 	/**
-	 * A method to get all batches using BatchService.
-	 * 
+	 * A method to get all batches using BatchService. 
 	 * @return a list of all batches, Http status 200 otherwise Http status 204
 	 */
 	@GetMapping("all")
 	public List<Batch> getBatchAll() {
 		List<Batch> result = batchService.getBatchAll();
-
 		if (result == null || result.isEmpty()) {
 			throw new NoBatchException("No batches exist");
 		}
@@ -56,9 +54,8 @@ public class BatchController {
 
 	/**
 	 * A method to get all past batches for the trainer using BatchService.
-	 * 
 	 * @param request
-	 *            Http request hold the trainer email as parameter.
+	 *         Http request hold the trainer email as parameter.
 	 * @return a list of all past batches for the trainer, Http status 200 otherwise
 	 *         Http status 204
 	 */
@@ -79,7 +76,6 @@ public class BatchController {
 
 	/**
 	 * A method to get all future batches for the trainer using BatchService.
-	 * 
 	 * @param request
 	 *            Http request hold the trainer email as parameter.
 	 * @return a list of all future batches for the trainer, Http status 200
@@ -87,7 +83,6 @@ public class BatchController {
 	 */
 	@GetMapping("future/{email}/")
 	public List<Batch> getFutureBatches(@PathVariable String email) {
-//		System.out.println("future/" + email);
 		List<Batch> batches = batchService.getBatchByTrainerID(trainerService.getTrainerByEmail(email));
 		if (batches == null) {
 			throw new NoBatchException("No future batches");
@@ -103,7 +98,6 @@ public class BatchController {
 
 	/**
 	 * A method to get all in-progress batches for the trainer using BatchService.
-	 * 
 	 * @param request
 	 *            Http request hold the trainer email as parameter.
 	 * @return a list of all in-progress batches for the trainer, Http status 200
@@ -111,7 +105,6 @@ public class BatchController {
 	 */
 	@GetMapping("inprogress/{email}/")
 	public Batch getBatchInProgress(@PathVariable String email ) {
-//		System.out.println("inprogress/" + email);
 		List<Batch> batches = batchService.getBatchByTrainerID(trainerService.getTrainerByEmail(email));
 		if (batches == null) {
 			throw new NoBatchException("no bathces in progress");
@@ -133,7 +126,6 @@ public class BatchController {
 
 	/**
 	 * A method to get all in-progress for the trainer batches using BatchService.
-	 * 
 	 * @param request
 	 *            Http request hold the trainer email as parameter.
 	 * @return a list of all in-progress batches for the trainer, Http status 200
@@ -141,7 +133,6 @@ public class BatchController {
 	 */
 	@GetMapping("allinprogress/{email}/")
 	public List<Batch> getAllBatchesInProgress(@PathVariable String email) {
-//		System.out.println("allinprogress/" + email);
 		List<Batch> batches = batchService.getBatchByTrainerID(trainerService.getTrainerByEmail(email));
 		if (batches == null) {
 			throw new NoBatchException("no batches in progress");
@@ -157,7 +148,6 @@ public class BatchController {
 
 	/**
 	 * A method to get batch by batch id using BatchService.
-	 * 
 	 * @param request
 	 *            Http request hold the batch id as parameter.
 	 * @return a batch , Http status 200 otherwise Http status 204.
@@ -173,15 +163,12 @@ public class BatchController {
 
 	/**
 	 * A method to update batch using BatchService.
-	 * 
 	 * @param batch
 	 *            to be update.
 	 * @return batch and Http status 202 otherwise Http status 400
 	 */
 	@PostMapping("updatebatch")
 	public Batch updateBatch(@RequestBody Batch batch) {
-		// System.out.println(batch);
-		
 		Batch result = batchService.addOrUpdateBatch(batch);
 		if (result == null) {
 			throw new BatchUpdateException("Error processing the update batch");
@@ -192,7 +179,6 @@ public class BatchController {
 
 	/**
 	 * A method to get all batch types using BatchService.
-	 * 
 	 * @return a list of batch types, Http status 200 otherwise Http status 204
 	 */
 	@GetMapping("batchtypes")
@@ -206,7 +192,6 @@ public class BatchController {
 
 	/**
 	 * Method to get all currently active batches
-	 * 
 	 * @author Francisco Palomino | Batch: 1712-dec10-java-steve
 	 * @return a list of batches, Http status 200 otherwise Http status 204
 	 */
