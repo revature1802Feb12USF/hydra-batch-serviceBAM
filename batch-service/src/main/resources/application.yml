@@ -1,5 +1,3 @@
-################################## MOVE TO CONFIG SERVER ################################## 
-
 server:
   port: 21038
 
@@ -37,5 +35,3 @@ endpoints:
     enabled: true
     sensitive: false
   sensitive: false
-
-################################## MOVE TO CONFIG SERVER ################################## 
