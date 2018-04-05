@@ -1,0 +1,41 @@
+################################## MOVE TO CONFIG SERVER ################################## 
+
+server:
+  port: 21038
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@usfdatabase.ciadranb6tbr.us-east-2.rds.amazonaws.com:1521:orcl
+    username: pokemondb
+    password: p4ssw0rd
+    driver-class-name: oracle.jdbc.OracleDriver
+    tomcat.max-active: 1
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format-sql: false
+    hibernate:
+      ddl-auto: validate
+
+##eureka stuff
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+#eureka.client.serviceUrl.defaultZone=${EUREKA_URI:http://18.219.59.193:8761/eureka}
+#eureka.instance.preferIpAddress=true
+#eureka.instance.hostname=ec2-18-217-226-63.us-east-2.compute.amazonaws.com
+
+#Actuator needs update for Spring Boot 2.0
+
+endpoints:
+  actuator:
+    enabled: true
+    sensitive: false
+  sensitive: false
+
+################################## MOVE TO CONFIG SERVER ################################## 
