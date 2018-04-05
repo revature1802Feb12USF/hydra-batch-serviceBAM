@@ -16,13 +16,13 @@ public class BamUser {
 
 	private Role role;
 
-	// @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	// @JoinColumn(name = "BATCH_ID", referencedColumnName = "BATCH_ID")
-	// @Autowired // Batch ID should only be used for associates. DO NOT use this
-	private Integer batch; // field to assign a batch to a trainer. It should be
-						// null for
-						// trainers and admins. A trainer is assigned in the
-						// Batches table.
+	/*
+	 * Batch ID should only be used for associates. DO NOT use this
+	 * field to assign a batch to a trainer. It should be
+	 * null for trainers and admins. A trainer is assigned in the
+	 * Batches table.
+	 */
+	private Integer batch; 
 
 	private String phone;
 
@@ -30,16 +30,17 @@ public class BamUser {
 
 	private String skype;
 
-	// This is a backup password that will be
-	// used when
-	private String pwd2;// the user needs to reset their password.
-
+	/* This is a backup password that will be
+	 used when the user needs to reset their password. */
+	private String pwd2;
+	
 	private Integer assignForceID;
 
 	public BamUser() {
 		super();
 	}
 
+	/* Basic Constructor */
 	public BamUser(String fName, String mName, String lName, String email, String pwd, Role role, int batch,
 			String phone, String phone2, String skype, String pwd2) {// NOSONAR
 		super();
@@ -56,6 +57,7 @@ public class BamUser {
 		this.pwd2 = pwd2;
 	}
 
+	/* Basic Constructor + UserId */
 	public BamUser(int userId, String fName, String mName, String lName, String email, String pwd, Role role, int batch,
 			String phone, String phone2, String skype, String pwd2) {// NOSONAR
 		super();
@@ -73,6 +75,7 @@ public class BamUser {
 		this.pwd2 = pwd2;
 	}
 
+	/* Basic Constructor + UserId + AssignForceID*/
 	public BamUser(int userId, String fName, String mName, String lName, String email, String pwd, Role role, int batch,
 			String phone, String phone2, String skype, String pwd2, Integer AssignForceID) {// NOSONAR
 		super();
@@ -89,7 +92,7 @@ public class BamUser {
 		this.skype = skype;
 		this.pwd2 = pwd2;
 		this.assignForceID = AssignForceID;
-	}
+	}	
 
 	public int getUserId() {
 		return userId;
@@ -197,9 +200,19 @@ public class BamUser {
 
 	@Override
 	public String toString() {
-		return "BamUser [userId=" + userId + ", fName=" + fName + ", mName=" + mName + ", lName=" + lName + ", email="
-				+ email + ", pwd=" + pwd + ", role=" + role + ", batch=" + batch + ", phone=" + phone + ", phone2="
-				+ phone2 + ", skype=" + skype + ", pwd2=" + pwd2 + ", assignForceID=" + assignForceID + "]";
+		return "BamUser [\n" + "(BamUser ID) \t userId =" + userId + ",\n" 
+				+ "(First Name) \t fName =" + fName + ",\n"
+				+ "(Middle Name) \t mName =" + mName + ",\n"
+				+ "(Last Name) \t lName =" + lName +",\n"
+				+ "(Email) \t email =" + email + ",\n"
+				+ "(Password) \t pwd =" + pwd + "\n"
+				+ "(Role) \t role =" + role + ",\n"
+				+ "(Batch) \t batch =" + batch + ",\n"
+				+ "(Phone) \t phone =" + phone +",\n"
+				+ "(Phone 2) \t phone2 =" + phone2 + "\n"
+				+ "(Skype) \t skype =" + skype + ",\n"
+				+ "(Password 2) \t pwd2 =" + pwd2 + ",\n"
+				+ "(AssignForce ID) \t assignForceID =" + assignForceID + "\n]";
 	}
 
 }
