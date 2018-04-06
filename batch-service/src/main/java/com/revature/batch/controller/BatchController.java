@@ -19,7 +19,7 @@ import com.revature.batch.service.BatchService;
 import com.revature.batch.service.TrainerService;
 
 @RestController
-@RequestMapping(value = "/api/v2/batch/")
+@RequestMapping(value = "/api/v2/batches/")
 public class BatchController {
 
 	@Autowired
@@ -167,7 +167,7 @@ public class BatchController {
 	 *            to be update.
 	 * @return batch and Http status 202 otherwise Http status 400
 	 */
-	@PostMapping("updatebatch")
+	@PostMapping("update")
 	public Batch updateBatch(@RequestBody Batch batch) {
 		Batch result = batchService.addOrUpdateBatch(batch);
 		if (result == null) {
@@ -181,7 +181,7 @@ public class BatchController {
 	 * A method to get all batch types using BatchService.
 	 * @return a list of batch types, Http status 200 otherwise Http status 204
 	 */
-	@GetMapping("batchtypes")
+	@GetMapping("types")
 	public List<BatchType> getAllBatchTypes() {
 		List<BatchType> result = batchService.getAllBatchTypes();
 		if (result == null || result.isEmpty()) {
@@ -195,7 +195,7 @@ public class BatchController {
 	 * @author Francisco Palomino | Batch: 1712-dec10-java-steve
 	 * @return a list of batches, Http status 200 otherwise Http status 204
 	 */
-	@GetMapping("currentbatches")
+	@GetMapping("current")
 	public List<Batch> currentbatches() {
 		List<Batch> batchesInProgress = batchService.currentBatches();
 		if (batchesInProgress == null || batchesInProgress.isEmpty()) {
