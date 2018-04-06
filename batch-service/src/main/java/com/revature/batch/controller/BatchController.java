@@ -167,7 +167,7 @@ public class BatchController {
 	 *            to be update.
 	 * @return batch and Http status 202 otherwise Http status 400
 	 */
-	@PostMapping("update")
+	@PostMapping("addOrUpdate")
 	public Batch updateBatch(@RequestBody Batch batch) {
 		Batch result = batchService.addOrUpdateBatch(batch);
 		if (result == null) {
