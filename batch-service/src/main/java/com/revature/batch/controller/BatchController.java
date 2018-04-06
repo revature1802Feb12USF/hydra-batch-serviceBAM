@@ -203,19 +203,4 @@ public class BatchController {
 		}
 		return batchesInProgress;
 	}
-	@GetMapping("allinprogress/{email}")
-	public List<Batch> getAllInProgress(@PathVariable String email) {
-		System.out.println("allinprogress/" + email);
-		List<Batch> batches = batchService.getBatchByTrainerID(trainerService.getTrainerByEmail(email));
-		System.out.println("allinprogress by email: " + batches);
-		if (batches == null) {
-			throw new NoBatchException("no batches in progress");
-		}
-		Timestamp t = new Timestamp(System.currentTimeMillis());
-		batches.removeIf(b -> t.before(b.getStartDate()) || t.after(b.getEndDate()));
-		if (batches.isEmpty()) {
-			throw new NoBatchException("no batches in progress");
-		}
-		return batches;
-	}
 }
