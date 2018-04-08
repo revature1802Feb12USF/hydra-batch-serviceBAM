@@ -42,7 +42,7 @@ public class BatchController {
 	 * A method to get all batches using BatchService. 
 	 * @return a list of all batches, Http status 200 otherwise Http status 204
 	 */
-	@GetMapping("all")
+	@GetMapping("")
 	public List<Batch> getBatchAll() {
 		List<Batch> result = batchService.getBatchAll();
 
