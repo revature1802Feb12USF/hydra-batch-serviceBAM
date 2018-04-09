@@ -18,10 +18,6 @@ import com.revature.batch.service.BatchService;
 import com.revature.batch.service.TrainerService;
 
 @RestController
-<<<<<<< HEAD
-@RequestMapping(value = "/api/v2/batches/")
-=======
->>>>>>> master
 public class BatchController {
 
 	@Autowired
@@ -45,10 +41,6 @@ public class BatchController {
 	 * 
 	 * @return a list of all batches, Http status 200 otherwise Http status 204
 	 */
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 	@GetMapping("")
 	public List<Batch> getBatchAll() {
 		List<Batch> result = batchService.getBatchAll();
