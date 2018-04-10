@@ -14,6 +14,7 @@ import com.revature.batch.repository.BatchTypeRepository;
 
 @Service
 public class BatchService {
+	
 	@Autowired
 	BatchRepository batchRepository;
 
@@ -30,7 +31,53 @@ public class BatchService {
 		this.batchTypeRepository = batchTypeRepository;
 	}
 
-	public Batch addOrUpdateBatch(Batch b) {
+	public List<Batch> getAllBatches() {
+		return batchRepository.findAll();
+	}
+
+	public List<Batch> getAllBatchesByTrainerID(int trainerID) {
+		return batchRepository.findByTrainerID(trainerID);
+	}
+
+	public List<Batch> getPastBatches() {
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		return batchRepository.findByEndDateLessThan(t);
+	}
+
+	public List<Batch> getPastBatchesByTrainerID(int trainerID) {
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		return batchRepository.findByTrainerIDAndEndDateLessThan(trainerID, t);
+	}
+
+	public List<Batch> getFutureBatches() {
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		return batchRepository.findByStartDateGreaterThan(t);
+	}
+
+	public List<Batch> getFutureBatchesByTrainerID(int trainerID) {
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		return batchRepository.findByTrainerIDAndStartDateGreaterThan(trainerID, t);
+	}
+
+	public List<Batch> getCurrentBatches() {
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		return batchRepository.findByStartDateLessThanAndEndDateGreaterThan(t, t);
+	}
+
+	public Batch getCurrentBatchByTrainerID(int trainerID) {
+		Timestamp t = new Timestamp(System.currentTimeMillis());
+		return batchRepository.findByTrainerIDAndStartDateLessThanAndEndDateGreaterThan(trainerID, t, t);
+	}
+
+	public Batch getBatchById(int id) {
+		return batchRepository.findOne(id);
+	}
+	
+	public Batch createBatch(Batch b) {
+		return batchRepository.save(b);
+	}
+
+	public Batch updateBatch(Batch b) {
 		if (b != null && b.getType() != null && b.getType().getId() != null) {
 			Integer typeId = b.getType().getId();
 			if (batchTypeRepository.exists(typeId)) {
@@ -43,30 +90,7 @@ public class BatchService {
 		return batchRepository.save(b);
 	}
 
-	public Batch getBatchById(Integer id) {
-		return batchRepository.findOne(id);
-	}
-
-	public List<Batch> getBatchAll() {
-		return batchRepository.findAll();
-	}
-
-	public List<Batch> getBatchByTrainerID(Integer trainerID) {
-		return trainerID == null ? null : batchRepository.findByTrainerID(trainerID);
-	}
-
 	public List<BatchType> getAllBatchTypes() {
 		return batchTypeRepository.findAll();
 	}
-
-	/**
-	 * Method to get all currently active batches
-	 * @author Francisco Palomino | Batch: 1712-dec10-java-steve
-	 * @return a list of batches, Http status 200 otherwise Http status 204
-	 */
-	public List<Batch> currentBatches() {
-		Timestamp t = new Timestamp(System.currentTimeMillis());
-		return batchRepository.findByEndDateGreaterThanAndStartDateLessThan(t, t);
-	}
-
 }
