@@ -15,6 +15,12 @@ import com.revature.batch.service.BatchService;
 /**
  * 
  * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+ * Last edited: 4/10/18
+ * Batch: 1802-Feb12-java-matt
+ * 
+ * Endpoints:
+ * getCurrentBatches() 		- get - /batches/current/
+ * getCurrentBatch() 		- get - /batches/current/{trainerID}
  * Batch: 1802-Feb12-java-matt
  * 
  * handles ZUUL endpoint /batches
@@ -37,8 +43,11 @@ public class BatchCurrentController {
 	}
 	
 	/**
-	 * A method to get all current batches using BatchService.
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * Last edited: 4/10/18
+	 * Batch: 1802-Feb12-java-matt
 	 * 
+	 * A method to get all current batches using BatchService.
 	 * @return a list of all current batches, 
 	 * 		Http status 200, otherwise Http status 204
 	 */
@@ -54,6 +63,10 @@ public class BatchCurrentController {
 	}
 
 	/**
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * Last edited: 4/10/18
+	 * Batch: 1802-Feb12-java-matt
+	 * 
 	 * A method to get all current batches for a specific trainer using BatchService.
 	 * 
 	 * @param Http request that holds trainer id as a parameter
