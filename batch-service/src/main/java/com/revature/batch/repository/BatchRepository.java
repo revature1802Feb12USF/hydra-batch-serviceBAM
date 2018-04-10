@@ -10,7 +10,14 @@ import java.util.List;
 
 @Repository
 public interface BatchRepository extends JpaRepository<Batch, Integer> {
-	public List<Batch> findByTrainerID(Integer trainerID);
-	public List<Batch> findByEndDateGreaterThanAndStartDateLessThan(Timestamp end, Timestamp start);
+	public List<Batch> findByTrainerID(int trainerID);
 
+	public List<Batch> findByEndDateLessThan(Timestamp curr);
+	public List<Batch> findByTrainerIDAndEndDateLessThan(int trainerID, Timestamp curr);
+
+	public List<Batch> findByStartDateGreaterThan(Timestamp curr);
+	public List<Batch> findByTrainerIDAndStartDateGreaterThan(int trainerID, Timestamp curr);
+
+	public List<Batch> findByStartDateLessThanAndEndDateGreaterThan(Timestamp start, Timestamp end);
+	public Batch findByTrainerIDAndStartDateLessThanAndEndDateGreaterThan(int trainerID, Timestamp start, Timestamp end);
 }
