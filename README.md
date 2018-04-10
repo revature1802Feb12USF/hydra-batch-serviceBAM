@@ -11,6 +11,25 @@ These instructions will get you a copy of the project up and running on your loc
 Java JDK 1.8
 Spring Tool Suite (STS)
 
+OJDBC Jar steps:
+	1. Delete all jars and unnecessary folders.
+
+	2. Add dependency to pom.xml
+		<dependency>
+    			<groupId>com.oracle</groupId>
+    			<artifactId>ojdbc8</artifactId>
+   			 <version>12.2.0.1</version>
+		</dependency>
+
+
+	3a. Download OJDBC8.jar if you don't have it.
+	http://www.oracle.com/technetwork/database/features/jdbc/jdbc-	ucp-122-3110062.html
+
+	3b. Run maven install goal
+		Change Z:\Program Files\OJDBC\ojdbc8.jar to location of 				your jar. 
+		Don't move it after running!
+	mvn install:install-file -Dfile="Z:\Program Files\OJDBC\ojdbc8.jar" -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=12.2.0.1 -Dpackaging=jar
+
 ### Installing
 
 Either:
