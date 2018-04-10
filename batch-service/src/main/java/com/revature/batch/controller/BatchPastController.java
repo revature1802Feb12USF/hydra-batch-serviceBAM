@@ -21,7 +21,6 @@ import com.revature.batch.service.BatchService;
  * Endpoints:
  * getPastBatches() 				- get - batches/past/
  * getPastBatchesByTrainerId() 		- get - batches/past/{trainerID}
- * Batch: 1802-Feb12-java-matt
  * 
  * handles ZUUL endpoint /batches
  *

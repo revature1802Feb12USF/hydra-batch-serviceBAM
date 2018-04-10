@@ -45,8 +45,6 @@ public class BatchController {
 	 * Batch: 1802-Feb12-java-matt
 	 * 
 	 * A method to get batch by batch id using BatchService.
-	 * @param Http request that holds the batch id as parameter.
-	 * A method to get batch by batch id using BatchService.
 	 * 
 	 * @param Http request that holds the batch id as parameter.
 	 * 

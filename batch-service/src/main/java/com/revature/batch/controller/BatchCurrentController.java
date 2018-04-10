@@ -43,11 +43,12 @@ public class BatchCurrentController {
 	}
 	
 	/**
+	 * A method to get all current batches using BatchService.
+	 * 
 	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
 	 * Last edited: 4/10/18
 	 * Batch: 1802-Feb12-java-matt
 	 * 
-	 * A method to get all current batches using BatchService.
 	 * @return a list of all current batches, 
 	 * 		Http status 200, otherwise Http status 204
 	 */
