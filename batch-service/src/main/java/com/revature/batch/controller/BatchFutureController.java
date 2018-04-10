@@ -21,6 +21,9 @@ import com.revature.batch.service.BatchService;
  * Endpoints:
  * getFutureBatches() 				- get - batches/future/
  * getFutureBatchesByTrainerID() 	- get - batches/future/{trainerID}
+ * Batch: 1802-Feb12-java-matt
+ * 
+ * handles ZUUL endpoint /batches
  *
  */
 @RestController
@@ -45,6 +48,7 @@ public class BatchFutureController {
 	 * Batch: 1802-Feb12-java-matt
 	 * 
 	 * A method to get all future batches using BatchService.
+	 *
 	 * @return a list of all future batches, 
 	 * 		Http status 200, otherwise Http status 204
 	 */
@@ -65,7 +69,9 @@ public class BatchFutureController {
 	 * Batch: 1802-Feb12-java-matt
 	 * 
 	 * A method to get all future batches for a specific trainer using BatchService.
-	 * @param Http request that holds trainer id as a parameter.           
+	 * 
+	 * @param Http request that holds trainer id as a parameter.
+	 *            
 	 * @return a list of future batches for a specific trainer, 
 	 * 		Http status 200, otherwise Http status 204
 	 */

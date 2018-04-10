@@ -19,6 +19,9 @@ import com.revature.batch.service.BatchService;
  * 
  * Endpoints:
  * getAllBatchTypes() 			- get - batches/types/
+ * Batch: 1802-Feb12-java-matt
+ * 
+ * handles ZUUL endpoint /batches
  * 
  * A BatchType describes the main focus of a Batch
  * Ex. Java, .NET, etc.
@@ -45,7 +48,6 @@ public class BatchTypeController {
 	 * Last edited: 4/10/18
 	 * Batch: 1802-Feb12-java-matt
 	 * 
-	 * A method to get all batch types using BatchService.
 	 * @return a list of batch types, Http status 200 otherwise Http status 204
 	 */
 	@GetMapping("/")
