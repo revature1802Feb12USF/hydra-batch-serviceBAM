@@ -37,7 +37,7 @@ public class BatchServiceTests {
 		when(mockBatchRepo.save(batch)).thenReturn(batch);
 		
 		// Execute
-		Batch returnBatch = batchService.addOrUpdateBatch(batch);
+		Batch returnBatch = batchService.updateBatch(batch);
 		
 		// Verify
 		Assert.notNull(returnBatch.getType().getId(), "not null");
@@ -51,7 +51,7 @@ public class BatchServiceTests {
 		when(mockBatchRepo.save(batch)).thenReturn(batch);
 		
 		// Execute
-		Batch returnBatch = batchService.addOrUpdateBatch(batch);
+		Batch returnBatch = batchService.updateBatch(batch);
 		
 		// Verify
 		Assert.isNull(returnBatch.getType().getId(), "null");
@@ -65,7 +65,7 @@ public class BatchServiceTests {
 		when(mockBatchRepo.save(batch)).thenReturn(batch);
 		
 		// Execute
-		Batch returnBatch = batchService.addOrUpdateBatch(batch);
+		Batch returnBatch = batchService.updateBatch(batch);
 		
 		// Verify
 		assertTrue(returnBatch.getType() instanceof BatchType);
@@ -80,7 +80,7 @@ public class BatchServiceTests {
 		when(mockBatchRepo.save(batch)).thenReturn(batch);
 		
 		// Execute
-		Batch returnBatch = batchService.addOrUpdateBatch(batch);
+		Batch returnBatch = batchService.updateBatch(batch);
 		
 		// Verify
 		assertTrue(returnBatch.getType().getId() instanceof Integer);
