@@ -38,9 +38,9 @@ public class Batch {
 	@NotNull(message = "Trainer cannot be null")
 	private Integer trainerID;
 	
-	@Column(name = "CIRRICULUM_ID")
-	@NotNull(message = "Cirriculum cannot be null")
-	private Integer cirriculumID;
+	@Column(name = "CURRICULUM_ID")
+	@NotNull(message = "Curriculum cannot be null")
+	private Integer curriculumID;
 	
 	@Column(name = "SCHEDULE_ID")
 	@NotNull(message = "Schedule cannot be null")
@@ -50,24 +50,24 @@ public class Batch {
 		super();
 	}
 		
-	public Batch(Integer id, String name, Timestamp startDate, Timestamp endDate, Integer trainerID, Integer cirriculumID, Integer scheduleID) {
+	public Batch(Integer id, String name, Timestamp startDate, Timestamp endDate, Integer trainerID, Integer curriculumID, Integer scheduleID) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.trainerID = trainerID;
-		this.cirriculumID = cirriculumID;
+		this.curriculumID = curriculumID;
 		this.scheduleID = scheduleID;
 	}
 
-	public Batch(String name, Timestamp startDate, Timestamp endDate, Integer trainerID, Integer cirriculumID, Integer scheduleID) {
+	public Batch(String name, Timestamp startDate, Timestamp endDate, Integer trainerID, Integer curriculumID, Integer scheduleID) {
 		super();
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.trainerID = trainerID;
-		this.cirriculumID = cirriculumID;
+		this.curriculumID = curriculumID;
 		this.scheduleID = scheduleID;
 	}
 
@@ -111,12 +111,12 @@ public class Batch {
 		this.trainerID = trainerID;
 	}
 
-	public Integer getCirriculumID() {
-		return cirriculumID;
+	public Integer getCurriculumID() {
+		return curriculumID;
 	}
 
-	public void setCirriculumID(Integer cirriculumID) {
-		this.cirriculumID = cirriculumID;
+	public void setCurriculumID(Integer curriculumID) {
+		this.curriculumID = curriculumID;
 	}
 
 	public Integer getScheduleID() {
@@ -140,7 +140,7 @@ public class Batch {
 			+ "(EndDate) \t endDate =" + endDate +",\n"
 			+ "(TrainerID) \t trainerID =" + trainerID + ",\n"
 			+ "(ScheduleID) \t scheduleID =" + scheduleID + ",\n"
-			+ "(CirriculumID) \t cirriculumID =" + cirriculumID + "\n]";
+			+ "(CurriculumID) \t curriculumID =" + curriculumID + "\n]";
 	}
 	                                          
 }
