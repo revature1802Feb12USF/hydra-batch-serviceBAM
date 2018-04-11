@@ -133,6 +133,11 @@ public class Batch {
 		this.scheduleID = scheduleID;
 	}
 
+	/*
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * Last edited: 4/10/18
+	 * Batch: 1802-Feb12-java-matt
+	*/
 	@Override
 	public String toString() {
 		return "Batch [\n" + "(Batch ID) \t id =" + id + ",\n" 

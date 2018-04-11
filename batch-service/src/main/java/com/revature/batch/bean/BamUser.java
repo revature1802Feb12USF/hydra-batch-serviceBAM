@@ -198,6 +198,11 @@ public class BamUser {
 		this.batch = batch;
 	}
 
+	/*
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * Last edited: 4/10/18
+	 * Batch: 1802-Feb12-java-matt
+	*/
 	@Override
 	public String toString() {
 		return "BamUser [\n" + "(BamUser ID) \t userId =" + userId + ",\n" 

@@ -67,6 +67,11 @@ public class BatchType {
 		this.length = length;
 	}
 
+	/*
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * Last edited: 4/10/18
+	 * Batch: 1802-Feb12-java-matt
+	*/
 	@Override
 	public String toString() {
 		return "BatchType [\n" + "(ID) \t id =" + id + ",\n" 
