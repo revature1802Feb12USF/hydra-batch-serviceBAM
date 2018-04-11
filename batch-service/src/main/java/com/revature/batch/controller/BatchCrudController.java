@@ -49,7 +49,6 @@ public class BatchCrudController {
 	 * Batch: 1802-Feb12-java-matt
 	 * 
 	 * A method to get all batches using BatchService.
-	 * 
 	 * @return a list of batches, Http status 200 otherwise Http status 204
 	 */
 	@GetMapping("/")
@@ -71,7 +70,6 @@ public class BatchCrudController {
 	 * Batch: 1802-Feb12-java-matt
 	 * 
 	 * @param Http request that holds trainer id as a parameter.
-	 * 
 	 * @return a list of batches for the trainer, 
 	 * 		Http status 200 otherwise Http status 204
 	 */
@@ -94,7 +92,6 @@ public class BatchCrudController {
 	 * Batch: 1802-Feb12-java-matt
 	 * 
 	 * @param batch to be updated.
-	 * 
 	 * @return batch and Http status 202 otherwise Http status 400
 	 */
 	@PutMapping("/")

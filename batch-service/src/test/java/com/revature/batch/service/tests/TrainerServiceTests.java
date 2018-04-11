@@ -9,8 +9,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.revature.batch.bean.BamUser;
 import com.revature.batch.bean.Batch;
-import com.revature.batch.bean.BatchType;
-import com.revature.batch.repository.BatchTypeRepository;
 import com.revature.batch.service.BatchService;
 import com.revature.batch.service.TrainerService;
 
