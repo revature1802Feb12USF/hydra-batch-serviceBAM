@@ -152,12 +152,12 @@ public class BatchControllerTests {
 	@Test
 	public void testRestAssured(){
 		
-		Response resp = RestAssured.get("http://localhost:8888/api/v2/batches/1");//.andReturn();
+		Response resp = RestAssured.get("http://localhost:9001/api/v2/batches/batch/1");//.andReturn();
 		
 		String json = resp.getBody().asString();
 		
 		JsonPath jsonPath = new JsonPath(json);
-		Assert.assertEquals("1", jsonPath.getString("id"));
+		Assert.assertEquals("50", jsonPath.getString("trainerID"));
 		
 	}
 
@@ -170,8 +170,9 @@ public class BatchControllerTests {
 	@Test
 	public void testRestAssuredDotThen() {
 		
-		RestAssured.get("http://localhost:9001/api/v2/batches/1").then().body("id", equalTo("1"));
+		RestAssured.get("http://localhost:9001/api/v2/batches/batch/1").then().body("trainerID", equalTo(50));
 	
 	}
+	
 	
 }
