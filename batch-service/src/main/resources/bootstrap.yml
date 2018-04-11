@@ -1,6 +1,24 @@
+server:
+  port: 5100
+
 spring:
   application:
     name: hydra-batch-service
   cloud:
     config:
       uri: http://localhost:8888
+  datasource:
+    url: jdbc:h2:mem:testBatch
+    username: roll
+    password: tide
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+    properties:
+      hibernate:
+        format-sql: false
+  h2:
+    console:
+      enabled: true
+      path: /h2
