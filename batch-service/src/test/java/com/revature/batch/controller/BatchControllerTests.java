@@ -14,7 +14,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.revature.batch.bean.Batch;
-import com.revature.batch.bean.BatchType;
 import com.revature.batch.exception.BatchUpdateException;
 import com.revature.batch.exception.NoBatchException;
 import com.revature.batch.service.BatchService;
@@ -33,7 +32,6 @@ public class BatchControllerTests {
 	BatchCurrentController batchCurrentController = new BatchCurrentController(mockBatchService);
 	BatchFutureController batchFutureController = new BatchFutureController(mockBatchService);
 	BatchPastController batchPastController = new BatchPastController(mockBatchService);
-	BatchTypeController batchTypeController = new BatchTypeController(mockBatchService);
 	
 //	@Rule
 //	public ExpectedException thrown = ExpectedException.none();
