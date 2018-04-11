@@ -41,34 +41,40 @@ public class Batch {
 	private Timestamp endDate;
 	
 	@Column(name = "TRAINER")
-	@NotNull(message = "Trainer cannt be null")
+	@NotNull(message = "Trainer cannot be null")
 	private Integer trainerID;
-
-	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "BATCH_TYPE", referencedColumnName = "Batch_Type_ID")
-	private BatchType type;
+	
+	@Column(name = "CIRRICULUM_ID")
+	@NotNull(message = "Cirriculum cannot be null")
+	private Integer cirriculumID;
+	
+	@Column(name = "SCHEDULE_ID")
+	@NotNull(message = "Schedule cannot be null")
+	private Integer scheduleID;
 
 	public Batch() {
 		super();
 	}
 		
-	public Batch(Integer id, String name, Timestamp startDate, Timestamp endDate, Integer trainerID, BatchType type) {
+	public Batch(Integer id, String name, Timestamp startDate, Timestamp endDate, Integer trainerID, Integer cirriculumID, Integer scheduleID) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.trainerID = trainerID;
-		this.type = type;
+		this.cirriculumID = cirriculumID;
+		this.scheduleID = scheduleID;
 	}
 
-	public Batch(String name, Timestamp startDate, Timestamp endDate, Integer trainerID, BatchType type) {
+	public Batch(String name, Timestamp startDate, Timestamp endDate, Integer trainerID, Integer cirriculumID, Integer scheduleID) {
 		super();
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.trainerID = trainerID;
-		this.type = type;
+		this.cirriculumID = cirriculumID;
+		this.scheduleID = scheduleID;
 	}
 
 	public Integer getId() {
@@ -111,12 +117,20 @@ public class Batch {
 		this.trainerID = trainerID;
 	}
 
-	public BatchType getType() {
-		return type;
+	public Integer getCirriculumID() {
+		return cirriculumID;
 	}
 
-	public void setType(BatchType type) {
-		this.type = type;
+	public void setCirriculumID(Integer cirriculumID) {
+		this.cirriculumID = cirriculumID;
+	}
+
+	public Integer getScheduleID() {
+		return scheduleID;
+	}
+
+	public void setScheduleID(Integer scheduleID) {
+		this.scheduleID = scheduleID;
 	}
 
 	@Override
@@ -126,7 +140,8 @@ public class Batch {
 			+ "(StartDate) \t startDate =" + startDate + ",\n"
 			+ "(EndDate) \t endDate =" + endDate +",\n"
 			+ "(TrainerID) \t trainerID =" + trainerID + ",\n"
-			+ "(Type) \t type =" + type + "\n]";
+			+ "(ScheduleID) \t scheduleID =" + scheduleID + ",\n"
+			+ "(CirriculumID) \t cirriculumID =" + cirriculumID + "\n]";
 	}
 	                                          
 }
