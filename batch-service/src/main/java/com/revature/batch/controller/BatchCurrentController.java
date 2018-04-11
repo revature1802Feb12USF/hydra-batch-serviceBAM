@@ -71,7 +71,6 @@ public class BatchCurrentController {
 	 * A method to get all current batches for a specific trainer using BatchService.
 	 * 
 	 * @param Http request that holds trainer id as a parameter
-	 * 
 	 * @return a Batch object for the current batch for the trainer, 
 	 * 		Http status 200, otherwise Http status 204
 	 */

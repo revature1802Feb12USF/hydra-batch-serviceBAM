@@ -18,7 +18,6 @@ import com.revature.batch.service.BatchService;
  * 
  * Endpoints:
  * getBatchById() 			- get - /batches/batch/{batchID}
- * Batch: 1802-Feb12-java-matt
  * 
  * handles ZUUL endpoint /batches
  *
@@ -45,9 +44,7 @@ public class BatchController {
 	 * Batch: 1802-Feb12-java-matt
 	 * 
 	 * A method to get batch by batch id using BatchService.
-	 * 
 	 * @param Http request that holds the batch id as parameter.
-	 * 
 	 * @return a Batch object, Http status 200 otherwise Http status 204.
 	 */
 	@GetMapping("/{batchID}")
