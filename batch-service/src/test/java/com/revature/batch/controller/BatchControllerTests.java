@@ -142,6 +142,7 @@ public class BatchControllerTests {
 		RestAssured.get("http://localhost:9001/api/v2/batches/future/50").then();
 	
 	}
+
 	
 	/**
 	 * @author FEB-1802 Marko Miocic, Matt's Branch
