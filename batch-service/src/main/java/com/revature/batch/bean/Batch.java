@@ -141,7 +141,6 @@ public class Batch {
 			+ "(TrainerID) \t trainerID =" + trainerID + ",\n"
 			+ "(ScheduleID) \t scheduleID =" + scheduleID + ",\n"
 			+ "(CurriculumID) \t curriculumID =" + curriculumID + "\n]";
-
 	}
 	                                          
 }

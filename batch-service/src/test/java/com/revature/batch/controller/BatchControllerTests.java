@@ -6,7 +6,9 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Rule;
@@ -31,146 +33,137 @@ public class BatchControllerTests {
 	BatchCrudController batchCrudController = new BatchCrudController(mockBatchService);
 	BatchCurrentController batchCurrentController = new BatchCurrentController(mockBatchService);
 	BatchFutureController batchFutureController = new BatchFutureController(mockBatchService);
-	BatchPastController batchPastController = new BatchPastController(mockBatchService);
-	
-//	@Rule
-//	public ExpectedException thrown = ExpectedException.none();
-//	
-//	@Test
-//	public void getAllBatches_returnsNonEmptyResult() throws NoBatchException {
-//		// Setup
-//		List<Batch> batch = new ArrayList<Batch>();
-//		batch.add(new Batch(null, null, null, null, new BatchType(1, null, null)));
-//		when(mockBatchService.getAllBatches()).thenReturn(batch);
-//		
-//		// Execute
-//		List<Batch> result = batchCrudController.getAllBatches();
-//		
-//		// Verify
-//		assertTrue(!result.isEmpty());
-//	}
-//	
-//	@Test
-//	public void getAllBatches_returnsCorrectInstanceof() throws NoBatchException {
-//		// Setup
-//		List<Batch> batch = new ArrayList<Batch>();
-//		batch.add(new Batch(null, null, null, null, new BatchType(1, null, null)));
-//		when(mockBatchService.getAllBatches()).thenReturn(batch);
-//		
-//		// Execute
-//		List<Batch> result = batchCrudController.getAllBatches();
-//		
-//		// Verify
-//		assertTrue(result.get(0) instanceof Batch);
-//	}
-//	
-//	@Test(expected = NoBatchException.class)
-//	public void getAllBatches_returnsCorrectException() throws NoBatchException {
-//		// Setup
-//		List<Batch> batch = new ArrayList<Batch>();
-//		when(mockBatchService.getAllBatchesByTrainerID(1)).thenReturn(batch);
-//		
-//		// Execute
-//		batchCrudController.getAllBatches();
-//	}
-//	
-//	@Test(expected = NoBatchException.class)
-//	public void getPastBatches_returnsCorrectException() throws NoBatchException {
-//		// Setup
-//		List<Batch> batch = new ArrayList<Batch>();
-//		when(mockBatchService.getAllBatchesByTrainerID(1)).thenReturn(batch);
-//		
-//		// Execute
-//		batchPastController.getPastBatches();
-//	}
-//	
-//	@Test(expected = NoBatchException.class)
-//	public void getFutureBatches_returnsCorrectException() throws NoBatchException {
-//		// Setup
-//		List<Batch> batch = new ArrayList<Batch>();
-//		when(mockBatchService.getAllBatchesByTrainerID(1)).thenReturn(batch);
-//		
-//		// Execute
-//		batchFutureController.getFutureBatches();
-//	}
-//	
-//	@Test(expected = NoBatchException.class)
-//	public void getCurrentBatch_returnsCorrectException() throws NoBatchException {
-//		// Setup
-//		List<Batch> batch = new ArrayList<Batch>();
-//		when(mockBatchService.getAllBatchesByTrainerID(1)).thenReturn(batch);
-//		
-//		// Execute
-//		batchCurrentController.getCurrentBatches();
-//	}
-//	
-//	@Test(expected = NoBatchException.class)
-//	public void getCurrentBatches_returnsCorrectException() throws NoBatchException {
-//		// Setup
-//		List<Batch> batch = new ArrayList<Batch>();
-//		when(mockBatchService.getAllBatchesByTrainerID(1)).thenReturn(batch);
-//		
-//		// Execute
-//		batchCurrentController.getCurrentBatches();
-//	}
-//	
-//	@Test(expected = NoBatchException.class)
-//	public void getBatchById_returnsCorrectException() throws NoBatchException {
-//		// Setup
-//		Batch batch = new Batch();
-//		when(mockBatchService.getBatchById(1)).thenReturn(batch);
-//		
-//		// Execute
-//		batchController.getBatchById(2);
-//	}
-//	
-//	@Test(expected = BatchUpdateException.class)
-//	public void updateBatch_returnsCorrectException() throws BatchUpdateException {
-//		// Setup
-//		Batch batch = new Batch();
-//		when(mockBatchService.updateBatch(batch)).thenReturn(batch);
-//		
-//		// Execute
-//		batchCrudController.updateBatch(new Batch());
-//	}
-//	
-//	@Test(expected = NoBatchException.class)
-//	public void getAllBatchTypes_returnsCorrectException() throws NoBatchException {
-//		// Setup
-//		List<BatchType> batches = new ArrayList<BatchType>();
-//		when(mockBatchService.getAllBatchTypes()).thenReturn(batches);
-//		
-//		// Execute
-//		batchTypeController.getAllBatchTypes();
-//	}
+	BatchPastController batchPastController = new BatchPastController(mockBatchService);	
+
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * @author FEB-1802 Marko Miocic and Sonam Sherpa,  Matt's Branch
 	 * 
 	 *  Simple Unit Test.  Tests to determine if RestAssured worked. Batch inside H2 database with batchId of 1
 	 */
 	@Test
-	public void testRestAssured(){
+	public void testRestAssuredDotThen() {	
+		RestAssured.get("http://localhost:9001/api/v2/batches/batch/1").then().body("trainerID", equalTo(50));
+	}
+	
+	/**
+	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * 
+	 *  Rest Assured Test.  Tests to get all batches that are hardcoded
+	 */
+	@Test
+	public void restAssuredTestGetAllBatches() {
+		RestAssured.get("http://localhost:9001/api/v2/batches/").then().body("[0].trainerID", equalTo(50))
+		.and().body("[1].trainerID", equalTo(51)).and().body("[2].trainerID", equalTo(61))
+		.and().body("[3].trainerID", equalTo(50)).and().body("[4].trainerID", equalTo(50));
+	}
+	
+	/**
+	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * 
+	 *  Rest Assured Test.  Tests to get all batches by TrainerID. This test test trainerId==50
+	 */
+	@Test
+	public void restAssuredTestGetBatchByTrainerID() {
+		RestAssured.get("http://localhost:9001/api/v2/batches/50").then();
+	}
+	
+	/**
+	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * 
+	 *  Rest Assured Test.  Tests to update a batch
+	 *  Changes batch with id of 1 from batch name of 1801 to 1802
+	 */
+	@Test
+	public void restAssuredTestUpdateBatch() {	
+		Map<String,String> batch = new HashMap<>();
+		batch.put("id", "1");
+        batch.put("name", "1802");
+        batch.put("startDate", "1516683600000");
+        batch.put("endDate", "1521777600000");
+        batch.put("trainerID", "50");
+        batch.put("curriculumID", "10");
+        batch.put("scheduleID", "100");
+        
+        RestAssured.given().contentType("application/json").body(batch)
+        .when().put("http://localhost:9001/api/v2/batches/").then().statusCode(200);
+	}
+	
+	/**
+	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * 
+	 *  Rest Assured Test to get all current batches
+	 */
+	@Test
+	public void restAssuredTestGetCurrentBatches() {
+
 		
-		Response resp = RestAssured.get("http://localhost:9001/api/v2/batches/batch/1");//.andReturn();
+		RestAssured.get("http://localhost:9001/api/v2/batches/current/").then()
+		.body("[0].trainerID", equalTo(61)).and().body("[1].trainerID", equalTo(50));
+	
+	}
+	
+	/**
+	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * 
+	 *  Rest Assured Test to get all current batches by trainer ID
+	 *  This test tests for trainerID==50
+	 */
+	@Test
+	public void restAssuredTestGetCurrentBatchesByTrainerID() {
+		RestAssured.get("http://localhost:9001/api/v2/batches/current/50").then();
+	
+	}
+	
+	/**
+	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * 
+	 *  Rest Assured Test to get all future batches
+	 */
+	@Test
+	public void restAssuredTestGetFutureBatches() {
 		
-		String json = resp.getBody().asString();
+		RestAssured.get("http://localhost:9001/api/v2/batches/future/").then()
+		.body("[0].trainerID", equalTo(50));
+	
+	}
+	
+	/**
+	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * 
+	 *  Rest Assured Test to get all future batches by trainer ID
+	 *  This test tests for trainerID==50
+	 */
+	@Test
+	public void restAssuredTestGetFutureBatchesByTrainerID() {
 		
-		JsonPath jsonPath = new JsonPath(json);
-		Assert.assertEquals("50", jsonPath.getString("trainerID"));
-		
+		RestAssured.get("http://localhost:9001/api/v2/batches/future/50").then();
+	
 	}
 
 	
 	/**
 	 * @author FEB-1802 Marko Miocic, Matt's Branch
 	 * 
-	 *  Simple Unit Test.  Tests to determine if RestAssured worked. Batch inside H2 database with batchId of 1
+	 *  Rest Assured Test to get all past batches
 	 */
 	@Test
-	public void testRestAssuredDotThen() {
+	public void restAssuredTestGetPastBatches() {
 		
-		RestAssured.get("http://localhost:9001/api/v2/batches/batch/1").then().body("trainerID", equalTo(50));
+		RestAssured.get("http://localhost:9001/api/v2/batches/past/").then()
+		.body("[0].trainerID", equalTo(50)).and().body("[1].trainerID", equalTo(51));
+	
+	}
+	
+	/**
+	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * 
+	 *  Rest Assured Test to get all past batches by trainer ID
+	 *  This test tests for trainerID==50
+	 */
+	@Test
+	public void restAssuredTestGetPastBatchesByTrainerID() {
+		RestAssured.get("http://localhost:9001/api/v2/batches/past/50").then();
 	
 	}
 	
