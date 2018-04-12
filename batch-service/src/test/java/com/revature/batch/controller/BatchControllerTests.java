@@ -65,9 +65,7 @@ public class BatchControllerTests {
 	 */
 	@Test
 	public void restAssuredTestGetBatchByTrainerID() {
-		
 		RestAssured.get("http://localhost:9001/api/v2/batches/50").then();
-	
 	}
 	
 	/**
@@ -98,6 +96,7 @@ public class BatchControllerTests {
 	 */
 	@Test
 	public void restAssuredTestGetCurrentBatches() {
+
 		
 		RestAssured.get("http://localhost:9001/api/v2/batches/current/").then()
 		.body("[0].trainerID", equalTo(61)).and().body("[1].trainerID", equalTo(50));
@@ -112,7 +111,6 @@ public class BatchControllerTests {
 	 */
 	@Test
 	public void restAssuredTestGetCurrentBatchesByTrainerID() {
-		
 		RestAssured.get("http://localhost:9001/api/v2/batches/current/50").then();
 	
 	}
@@ -165,9 +163,9 @@ public class BatchControllerTests {
 	 */
 	@Test
 	public void restAssuredTestGetPastBatchesByTrainerID() {
-		
 		RestAssured.get("http://localhost:9001/api/v2/batches/past/50").then();
 	
 	}
+	
 	
 }
