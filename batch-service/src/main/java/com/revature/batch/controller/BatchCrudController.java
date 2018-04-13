@@ -20,13 +20,12 @@ import com.revature.batch.service.BatchService;
  * Last edited: 4/10/18
  * Batch: 1802-Feb12-java-matt
  * 
+ * handles ZUUL endpoint /batches
+ * 
  * Endpoints:
  * getAllBatches() 				- get - /batches/
  * getAllBatchesByTrainerId() 	- get - /batches/{trainerID}
  * updateBatch() 				- put - /batches/
- * 
- * handles ZUUL endpoint /batches
- *
  */
 @RestController
 public class BatchCrudController {

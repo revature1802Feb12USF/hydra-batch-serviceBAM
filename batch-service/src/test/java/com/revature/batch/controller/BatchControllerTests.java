@@ -37,7 +37,7 @@ public class BatchControllerTests {
 
 	
 	/**
-	 * @author FEB-1802 Marko Miocic and Sonam Sherpa,  Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau,  Matt's Branch
 	 * 
 	 *  Simple Unit Test.  Tests to determine if RestAssured worked. Batch inside H2 database with batchId of 1
 	 */
@@ -47,7 +47,7 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
 	 * 
 	 *  Rest Assured Test.  Tests to get all batches that are hardcoded
 	 */
@@ -59,7 +59,7 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic and Sonam Sherpa Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
 	 * 
 	 *  Rest Assured Test.  Tests to get all batches by TrainerID. This test test trainerId==50
 	 */
@@ -70,7 +70,7 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
 	 * 
 	 *  Rest Assured Test.  Tests to update a batch
 	 *  Changes batch with id of 1 from batch name of 1801 to 1802
@@ -91,7 +91,7 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
 	 * 
 	 *  Rest Assured Test to get all current batches
 	 */
@@ -105,19 +105,19 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
 	 * 
 	 *  Rest Assured Test to get all current batches by trainer ID
 	 *  This test tests for trainerID==50
 	 */
 	@Test
 	public void restAssuredTestGetCurrentBatchesByTrainerID() {
-		RestAssured.get("http://localhost:9001/api/v2/batches/current/50").then();
+		RestAssured.get("http://localhost:9001/api/v2/batches/current/50").then().body("id", equalTo(4));
 	
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
 	 * 
 	 *  Rest Assured Test to get all future batches
 	 */
@@ -130,7 +130,7 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
 	 * 
 	 *  Rest Assured Test to get all future batches by trainer ID
 	 *  This test tests for trainerID==50
@@ -138,13 +138,13 @@ public class BatchControllerTests {
 	@Test
 	public void restAssuredTestGetFutureBatchesByTrainerID() {
 		
-		RestAssured.get("http://localhost:9001/api/v2/batches/future/50").then();
+		RestAssured.get("http://localhost:9001/api/v2/batches/future/50").then().body("[0].id", equalTo(5));
 	
 	}
 
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
 	 * 
 	 *  Rest Assured Test to get all past batches
 	 */
@@ -157,14 +157,14 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
 	 * 
 	 *  Rest Assured Test to get all past batches by trainer ID
 	 *  This test tests for trainerID==50
 	 */
 	@Test
 	public void restAssuredTestGetPastBatchesByTrainerID() {
-		RestAssured.get("http://localhost:9001/api/v2/batches/past/50").then();
+		RestAssured.get("http://localhost:9001/api/v2/batches/past/50").then().body("[0].id", equalTo(1));
 	
 	}
 	
