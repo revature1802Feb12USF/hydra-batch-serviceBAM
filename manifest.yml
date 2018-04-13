@@ -1,9 +1,9 @@
 applications:
-- name: hydra-curriculum-service
-  memory: 1000M
+- name: hydra-batch-service
+  memory: 700M
   instances: 1
   random-route: false
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
-  path: target/hydra-curriculum-service-0.0.1-SNAPSHOT.jar
+  path: target/hydra-batch-service-0.0.1-SNAPSHOT.jar
   env:
     SPRING_PROFILES_ACTIVE: prod
