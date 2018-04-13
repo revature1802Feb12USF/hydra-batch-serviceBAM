@@ -59,13 +59,14 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Matt's Branch
+	 * @author FEB-1802 Marko Miocic and Sonam Sherpa Matt's Branch
 	 * 
 	 *  Rest Assured Test.  Tests to get all batches by TrainerID. This test test trainerId==50
 	 */
 	@Test
 	public void restAssuredTestGetBatchByTrainerID() {
-		RestAssured.get("http://localhost:9001/api/v2/batches/50").then();
+		RestAssured.get("http://localhost:9001/api/v2/batches/50").then().body("[0].trainerID", equalTo(50))
+		.and().body("[1].trainerID", equalTo(50)).and().body("[2].trainerID", equalTo(50));
 	}
 	
 	/**
