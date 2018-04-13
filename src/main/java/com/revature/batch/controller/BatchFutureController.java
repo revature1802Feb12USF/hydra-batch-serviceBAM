@@ -18,12 +18,11 @@ import com.revature.batch.service.BatchService;
  * Last edited: 4/10/18
  * Batch: 1802-Feb12-java-matt
  * 
+ * handles ZUUL endpoint /batches
+ * 
  * Endpoints:
  * getFutureBatches() 				- get - batches/future/
  * getFutureBatchesByTrainerID() 	- get - batches/future/{trainerID}
- * 
- * handles ZUUL endpoint /batches
- *
  */
 @RestController
 @RequestMapping(value = "/future")
