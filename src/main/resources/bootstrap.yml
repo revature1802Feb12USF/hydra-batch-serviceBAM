@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: prod
+    active: dev
   application:
     name: hydra-batch-service
   datasource:
@@ -35,7 +35,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: https://hydra-discovery-service.cfapps.io/
+      defaultZone: https://hydra-discovery-service.cfapps.io/eureka/
 
 server:
   port: 0
