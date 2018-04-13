@@ -30,7 +30,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: hydra-discovery-service.cfapps.io
+      defaultZone: https://hydra-discovery-service.cfapps.io/
 
 server:
   port: 0
