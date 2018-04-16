@@ -16,16 +16,14 @@ import com.revature.batch.service.BatchService;
 
 /**
  * 
- * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+ * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
  * Last edited: 4/10/18
- * Batch: 1802-Feb12-java-matt
  * 
  * handles ZUUL endpoint /batches
  * 
- * Endpoints:
- * getAllBatches() 				- get - /batches/
- * getAllBatchesByTrainerId() 	- get - /batches/{trainerID}
- * updateBatch() 				- put - /batches/
+ * GET( /batches/ ) - Returns all batches
+ * GET( /batches/{trainerID} ) - Returns the batch with specific {trainerID}
+ * PUT( /batches/ ) - Updates any new values in current batch
  */
 @RestController
 public class BatchCrudController {
@@ -43,11 +41,10 @@ public class BatchCrudController {
 	}
 	
 	/**
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
-	 * Batch: 1802-Feb12-java-matt
 	 * 
-	 * A method to get all batches using BatchService.
+	 * method to get all batches using BatchService.
 	 * @return a list of batches, Http status 200 otherwise Http status 204
 	 */
 	@GetMapping("/")
@@ -62,15 +59,12 @@ public class BatchCrudController {
 	}
 	
 	/**
-	 * A method to get all batches for a specific trainer using BatchService.
-	 * 
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
-	 * Batch: 1802-Feb12-java-matt
 	 * 
+	 * method to get all batches for a specific trainer using BatchService
 	 * @param Http request that holds trainer id as a parameter.
-	 * @return a list of batches for the trainer, 
-	 * 		Http status 200 otherwise Http status 204
+	 * @return a list of batches for the trainer, Http status 200 otherwise Http status 204
 	 */
 	@GetMapping("/{trainerID}")
 	public List<Batch> getAllBatchesByTrainerId(@PathVariable int trainerID) {
@@ -84,12 +78,10 @@ public class BatchCrudController {
 	}
 
 	/**
-	 * A method to update batch using BatchService.
-	 * 
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
-	 * Batch: 1802-Feb12-java-matt
 	 * 
+	 * method to update batch using BatchService
 	 * @param batch to be updated.
 	 * @return batch and Http status 202 otherwise Http status 400
 	 */

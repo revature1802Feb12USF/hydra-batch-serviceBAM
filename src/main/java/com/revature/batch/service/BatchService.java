@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 import com.revature.batch.bean.Batch;
 import com.revature.batch.repository.BatchRepository;
 
+/**
+ * @author Joshua Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
+ * Last updated: 4/10/18
+ */
 @Service
 public class BatchService {
 	

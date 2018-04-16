@@ -16,12 +16,6 @@ public class BamUser {
 
 	private Role role;
 
-	/*
-	 * Batch ID should only be used for associates. DO NOT use this
-	 * field to assign a batch to a trainer. It should be
-	 * null for trainers and admins. A trainer is assigned in the
-	 * Batches table.
-	 */
 	private Integer batch; 
 
 	private String phone;
@@ -30,8 +24,6 @@ public class BamUser {
 
 	private String skype;
 
-	/* This is a backup password that will be
-	 used when the user needs to reset their password. */
 	private String pwd2;
 	
 	private Integer assignForceID;
@@ -40,7 +32,6 @@ public class BamUser {
 		super();
 	}
 
-	/* Basic Constructor */
 	public BamUser(String fName, String mName, String lName, String email, String pwd, Role role, int batch,
 			String phone, String phone2, String skype, String pwd2) {// NOSONAR
 		super();
@@ -57,7 +48,6 @@ public class BamUser {
 		this.pwd2 = pwd2;
 	}
 
-	/* Basic Constructor + UserId */
 	public BamUser(int userId, String fName, String mName, String lName, String email, String pwd, Role role, int batch,
 			String phone, String phone2, String skype, String pwd2) {// NOSONAR
 		super();
@@ -75,7 +65,6 @@ public class BamUser {
 		this.pwd2 = pwd2;
 	}
 
-	/* Basic Constructor + UserId + AssignForceID*/
 	public BamUser(int userId, String fName, String mName, String lName, String email, String pwd, Role role, int batch,
 			String phone, String phone2, String skype, String pwd2, Integer AssignForceID) {// NOSONAR
 		super();
@@ -198,11 +187,6 @@ public class BamUser {
 		this.batch = batch;
 	}
 
-	/*
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
-	 * Last edited: 4/10/18
-	 * Batch: 1802-Feb12-java-matt
-	*/
 	@Override
 	public String toString() {
 		return "BamUser [\n" + "(BamUser ID) \t userId =" + userId + ",\n" 

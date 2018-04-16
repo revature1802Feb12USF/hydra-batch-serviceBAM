@@ -11,15 +11,12 @@ import com.revature.batch.exception.NoBatchException;
 import com.revature.batch.service.BatchService;
 
 /**
- * 
- * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+ * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
  * Last edited: 4/10/18
- * Batch: 1802-Feb12-java-matt
  * 
  * handles ZUUL endpoint /batches
  * 
- * Endpoints:
- * getBatchById() 			- get - /batches/batch/{batchID}
+ * GET( /batches/batch/{batchID} ) - Returns the batch with specific {batchID}
  */
 @RestController
 @RequestMapping(value = "/batch")
@@ -38,11 +35,10 @@ public class BatchController {
 	}
 
 	/**
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
-	 * Batch: 1802-Feb12-java-matt
 	 * 
-	 * A method to get batch by batch id using BatchService.
+	 * method to get batch by batch id using BatchService.
 	 * @param Http request that holds the batch id as parameter.
 	 * @return a Batch object, Http status 200 otherwise Http status 204.
 	 */

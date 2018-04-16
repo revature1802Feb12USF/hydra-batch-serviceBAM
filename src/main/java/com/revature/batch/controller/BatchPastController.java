@@ -13,16 +13,13 @@ import com.revature.batch.exception.NoBatchException;
 import com.revature.batch.service.BatchService;
 
 /**
- * 
- * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+ * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
  * Last edited: 4/10/18
- * Batch: 1802-Feb12-java-matt
  * 
  * handles ZUUL endpoint /batches
  * 
- * Endpoints:
- * getPastBatches() 				- get - batches/past/
- * getPastBatchesByTrainerId() 		- get - batches/past/{trainerID}
+ * GET( /batches/past/ ) - Returns all past batches
+ * GET( /batches/past/{trainerID} ) - Returns the past batches with specific {trainerID}
  */
 @RestController
 @RequestMapping(value = "/past")
@@ -41,9 +38,8 @@ public class BatchPastController {
 	}
 	
 	/**
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
-	 * Batch: 1802-Feb12-java-matt
 	 * 
 	 * A method to get all past batches using BatchService.
 	 * @return a list of all past batches, Http status 200 otherwise Http status 204
@@ -60,15 +56,12 @@ public class BatchPastController {
 	}
 
 	/**
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
-	 * Batch: 1802-Feb12-java-matt
 	 *   
 	 * A method to get all past batches for a specific trainer using BatchService.
-	 * 
 	 * @param Http request that holds trainer id as a parameter.
-	 * @return a list of past batches for the trainer, 
-	 * 			Http status 200 otherwise Http status 204
+	 * @return a list of past batches for the trainer, Http status 200 otherwise Http status 204
 	 */
 	@GetMapping("/{trainerID}")
 	public List<Batch> getPastBatchesByTrainerId(@PathVariable int trainerID) {
