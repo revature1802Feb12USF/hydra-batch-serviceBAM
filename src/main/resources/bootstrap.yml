@@ -41,7 +41,7 @@ eureka:
       defaultZone: https://hydra-discovery-service.cfapps.io/eureka/
 
 server:
-  port: 0
+  port: 80
 
 ---
 
