@@ -33,6 +33,9 @@ spring:
       uri: https://hydra-config-service.cfapps.io/
 
 eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    nonSecurePort: 80
   client:
     service-url:
       defaultZone: https://hydra-discovery-service.cfapps.io/eureka/
