@@ -29,7 +29,9 @@ public class BatchControllerTests {
 	/**
 	 * Tests to determine if RestAssured worked. Batch inside H2 database with batchId of 1
 	 * 
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 */
 	@Test
 	public void testRestAssuredDotThen() {	
@@ -39,7 +41,9 @@ public class BatchControllerTests {
 	/**
 	 * Rest Assured Test to get all batches
 	 * 
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 */
 	@Test
 	public void restAssuredTestGetAllBatches() {
@@ -51,7 +55,9 @@ public class BatchControllerTests {
 	/**
 	 * Rest Assured Test to get all batches by TrainerID. (trainerId==50)
 	 * 
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 */
 	@Test
 	public void restAssuredTestGetBatchByTrainerID() {
@@ -63,7 +69,9 @@ public class BatchControllerTests {
 	 * Rest Assured Test to update a batch
 	 *  	Changes batch with id of 1 from batch name of 1801 to 1802
 	 *  
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 */
 	@Test
 	public void restAssuredTestUpdateBatch() {	
@@ -83,7 +91,9 @@ public class BatchControllerTests {
 	/**
 	 * Rest Assured Test to get all current batches
 	 * 
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 */
 	@Test
 	public void restAssuredTestGetCurrentBatches() {
@@ -98,7 +108,9 @@ public class BatchControllerTests {
 	 * Rest Assured Test to get all current batches by trainer ID
 	 *  	This test tests for trainerID==50
 	 *  
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 */
 	@Test
 	public void restAssuredTestGetCurrentBatchesByTrainerID() {
@@ -123,7 +135,9 @@ public class BatchControllerTests {
 	 * Rest Assured Test to get all future batches by trainer ID
 	 *  	This test tests for trainerID==50
 	 *  
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 */
 	@Test
 	public void restAssuredTestGetFutureBatchesByTrainerID() {
@@ -136,7 +150,9 @@ public class BatchControllerTests {
 	/**
 	 * Rest Assured Test to get all past batches
 	 * 
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 */
 	@Test
 	public void restAssuredTestGetPastBatches() {
@@ -150,7 +166,9 @@ public class BatchControllerTests {
 	 * Rest Assured Test to get all past batches by trainer ID
 	 *  	This test tests for trainerID==50
 	 *  
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 */
 	@Test
 	public void restAssuredTestGetPastBatchesByTrainerID() {

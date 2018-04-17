@@ -24,8 +24,7 @@ public class BatchServiceApplication {
 	}
 
 	/**
-	 * @author Marko Miocic (1802-Matt)
-	 * Last updated by: (1802-Matt)
+	 * @author Jennifer Fox (1802-Matt)
 	 * 
 	 * @return new Swagger_2 Docket object
 	 */
