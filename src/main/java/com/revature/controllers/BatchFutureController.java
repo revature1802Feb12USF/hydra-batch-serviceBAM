@@ -13,8 +13,9 @@ import com.revature.exceptions.NoBatchException;
 import com.revature.services.BatchService;
 
 /**
- * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
- * Last edited: 4/10/18
+ * @author Joshua Boudreau (1802-Matt)
+ * @author Sonam Sherpa (1802-Matt)
+ * @author Marko Miocic (1802-Matt)
  * 
  * handles ZUUL endpoint /batches
  * 
@@ -40,8 +41,9 @@ public class BatchFutureController {
 	/**
 	 * A method to get all future batches using BatchService.
 	 * 
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
-	 * Last edited: 4/10/18
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 * 
 	 * @return a list of all future batches, Http status 200, otherwise Http status 204
 	 */
@@ -59,8 +61,9 @@ public class BatchFutureController {
 	/**
 	 * A method to get all future batches for a specific trainer using BatchService.
 	 * 
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
-	 * Last edited: 4/10/18
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 * 
 	 * @param Http request that holds trainer id as a parameter.         
 	 * @return a list of future batches for a specific trainer, 

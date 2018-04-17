@@ -11,8 +11,9 @@ import com.revature.exceptions.NoBatchException;
 import com.revature.services.BatchService;
 
 /**
- * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
- * Last edited: 4/10/18
+ * @author Joshua Boudreau (1802-Matt)
+ * @author Sonam Sherpa (1802-Matt)
+ * @author Marko Miocic (1802-Matt)
  * 
  * handles ZUUL endpoint /batches
  * 
@@ -37,8 +38,9 @@ public class BatchController {
 	/**
 	 * method to get batch by batch id using BatchService.
 	 * 
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
-	 * Last edited: 4/10/18
+	 * @author Josh Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 * 
 	 * @param Http request that holds the batch id as parameter.
 	 * @return a Batch object, Http status 200 otherwise Http status 204.

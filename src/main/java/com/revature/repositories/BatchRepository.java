@@ -9,8 +9,9 @@ import java.sql.Timestamp;
 import java.util.List;
 
 /**
- * @author Joshua Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
- * Last updated: 4/10/18
+ * @author Joshua Boudreau (1802-Matt)
+ * @author Sonam Sherpa (1802-Matt)
+ * @author Marko Miocic (1802-Matt)
  */
 @Repository
 public interface BatchRepository extends JpaRepository<Batch, Integer> {

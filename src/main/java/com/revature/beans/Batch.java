@@ -13,8 +13,9 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author Unknown
- * Last updated by: Joshua Boudreau, Sonam Sherpa, Marko Miocic(1802-Matt)
- * Last edited: 4/10/18
+ * @author Joshua Boudreau (1802-Matt)
+ * @author Sonam Sherpa (1802-Matt)
+ * @author Marko Miocic (1802-Matt)
  */
 @Entity
 @Table(name = "BATCH")
