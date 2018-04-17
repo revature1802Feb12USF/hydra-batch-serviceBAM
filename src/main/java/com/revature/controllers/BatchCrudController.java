@@ -15,14 +15,15 @@ import com.revature.exceptions.NoBatchException;
 import com.revature.services.BatchService;
 
 /**
- * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
- * Last edited: 4/10/18
  * 
  * handles ZUUL endpoint /batches
  * 
  * GET( /batches/ ) - Returns all batches
  * GET( /batches/{trainerID} ) - Returns the batch with specific {trainerID}
  * PUT( /batches/ ) - Updates any new values in current batch
+ *
+ * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
+ * Last edited: 4/10/18
  */
 @RestController
 public class BatchCrudController {
