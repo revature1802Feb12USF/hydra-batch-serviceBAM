@@ -13,13 +13,14 @@ import com.revature.exceptions.NoBatchException;
 import com.revature.services.BatchService;
 
 /**
- * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
- * Last edited: 4/10/18
- * 
  * handles ZUUL endpoint /batches
  * 
  * GET( /batches/current/ ) - Returns all current batches
  * GET( /batches/current/{trainerID} ) - Returns the current batches with specific {trainerID}
+ * 
+ * @author Joshua Boudreau (1802-Matt)
+ * @author Sonam Sherpa (1802-Matt)
+ * @author Marko Miocic (1802-Matt)
  */
 @RestController
 @RequestMapping(value = "/current")
@@ -40,8 +41,9 @@ public class BatchCurrentController {
 	/**
 	 * method to get all current batches using BatchService
 	 * 
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
-	 * Last edited: 4/10/18
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 * 
 	 * @return a list of all current batches, Http status 200, otherwise Http status 204
 	 */
@@ -59,8 +61,9 @@ public class BatchCurrentController {
 	/**
 	 * method to get all current batches for a specific trainer using BatchService
 	 * 
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
-	 * Last edited: 4/10/18
+	 * @author Joshua Boudreau (1802-Matt)
+	 * @author Sonam Sherpa (1802-Matt)
+	 * @author Marko Miocic (1802-Matt)
 	 * 
 	 * @param Http request that holds trainer id as a parameter
 	 * @return a Batch object for the current batch for the trainer, 

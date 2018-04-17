@@ -4,8 +4,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
- * @author Joshua Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
- * Last updated: 4/10/18
+ * @author Joshua Boudreau (1802-Matt)
+ * @author Sonam Sherpa (1802-Matt)
+ * @author Marko Miocic (1802-Matt)
  */
 @ResponseStatus(value = HttpStatus.BAD_REQUEST)
 public class BatchUpdateException extends RuntimeException {
