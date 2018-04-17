@@ -16,14 +16,14 @@ import com.revature.services.BatchService;
 
 /**
  * 
- * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
- * Last edited: 4/10/18
- * 
  * handles ZUUL endpoint /batches
  * 
  * GET( /batches/ ) - Returns all batches
  * GET( /batches/{trainerID} ) - Returns the batch with specific {trainerID}
  * PUT( /batches/ ) - Updates any new values in current batch
+ *
+ * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
+ * Last edited: 4/10/18
  */
 @RestController
 public class BatchCrudController {
@@ -41,10 +41,11 @@ public class BatchCrudController {
 	}
 	
 	/**
+	 * method to get all batches using BatchService.
+	 * 
 	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
 	 * 
-	 * method to get all batches using BatchService.
 	 * @return a list of batches, Http status 200 otherwise Http status 204
 	 */
 	@GetMapping("/")
@@ -59,10 +60,11 @@ public class BatchCrudController {
 	}
 	
 	/**
+	 * method to get all batches for a specific trainer using BatchService
+	 * 
 	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
 	 * 
-	 * method to get all batches for a specific trainer using BatchService
 	 * @param Http request that holds trainer id as a parameter.
 	 * @return a list of batches for the trainer, Http status 200 otherwise Http status 204
 	 */
@@ -78,10 +80,11 @@ public class BatchCrudController {
 	}
 
 	/**
+	 * method to update batch using BatchService
+	 * 
 	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
 	 * 
-	 * method to update batch using BatchService
 	 * @param batch to be updated.
 	 * @return batch and Http status 202 otherwise Http status 400
 	 */
