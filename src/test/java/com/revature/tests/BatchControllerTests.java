@@ -7,13 +7,13 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import com.revature.controller.BatchController;
-import com.revature.controller.BatchCrudController;
-import com.revature.controller.BatchCurrentController;
-import com.revature.controller.BatchFutureController;
-import com.revature.controller.BatchPastController;
-import com.revature.service.BatchService;
-import com.revature.service.TrainerService;
+import com.revature.controllers.BatchController;
+import com.revature.controllers.BatchCrudController;
+import com.revature.controllers.BatchCurrentController;
+import com.revature.controllers.BatchFutureController;
+import com.revature.controllers.BatchPastController;
+import com.revature.services.BatchService;
+import com.revature.services.TrainerService;
 
 import io.restassured.RestAssured;
 

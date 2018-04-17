@@ -1,4 +1,4 @@
-package com.revature.logging;
+package com.revature.loggings;
 
 
 /**

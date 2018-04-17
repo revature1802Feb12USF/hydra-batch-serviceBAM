@@ -1,4 +1,4 @@
-package com.revature.controller;
+package com.revature.controllers;
 
 import java.util.List;
 
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.bean.Batch;
-import com.revature.exception.BatchUpdateException;
-import com.revature.exception.NoBatchException;
-import com.revature.service.BatchService;
+import com.revature.beans.Batch;
+import com.revature.exceptions.BatchUpdateException;
+import com.revature.exceptions.NoBatchException;
+import com.revature.services.BatchService;
 
 /**
  * 

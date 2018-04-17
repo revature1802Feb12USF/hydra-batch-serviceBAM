@@ -1,4 +1,4 @@
-package com.revature.bean;
+package com.revature.beans;
 
 public enum Role {
     NONE, ASSOCIATE, TRAINER, ADMIN;

@@ -1,9 +1,9 @@
-package com.revature.repository;
+package com.revature.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.revature.bean.Batch;
+import com.revature.beans.Batch;
 
 import java.sql.Timestamp;
 import java.util.List;

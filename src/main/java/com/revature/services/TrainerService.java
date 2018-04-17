@@ -1,4 +1,4 @@
-package com.revature.service;
+package com.revature.services;
 
 import java.util.Hashtable;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.revature.bean.BamUser;
+import com.revature.beans.BamUser;
 
 @Service
 public class TrainerService {

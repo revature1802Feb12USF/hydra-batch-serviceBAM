@@ -1,4 +1,4 @@
-package com.revature.controller;
+package com.revature.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.bean.Batch;
-import com.revature.exception.NoBatchException;
-import com.revature.service.BatchService;
+import com.revature.beans.Batch;
+import com.revature.exceptions.NoBatchException;
+import com.revature.services.BatchService;
 
 /**
  * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)

@@ -1,4 +1,4 @@
-package com.revature.service;
+package com.revature.services;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.revature.bean.Batch;
-import com.revature.repository.BatchRepository;
+import com.revature.beans.Batch;
+import com.revature.repositories.BatchRepository;
 
 /**
  * @author Joshua Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
