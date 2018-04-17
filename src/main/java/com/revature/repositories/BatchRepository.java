@@ -23,5 +23,5 @@ public interface BatchRepository extends JpaRepository<Batch, Integer> {
 	public List<Batch> findByTrainerIDAndStartDateGreaterThan(int trainerID, Timestamp curr);
 
 	public List<Batch> findByStartDateLessThanAndEndDateGreaterThan(Timestamp start, Timestamp end);
-	public Batch findByTrainerIDAndStartDateLessThanAndEndDateGreaterThan(int trainerID, Timestamp start, Timestamp end);
+	public List<Batch> findByTrainerIDAndStartDateLessThanAndEndDateGreaterThan(int trainerID, Timestamp start, Timestamp end);
 }

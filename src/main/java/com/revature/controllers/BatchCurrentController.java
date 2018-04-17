@@ -65,14 +65,14 @@ public class BatchCurrentController {
 	 * 		Http status 200, otherwise Http status 204
 	 */
 	@GetMapping("/{trainerID}")
-	public Batch getCurrentBatch(@PathVariable int trainerID) {
+	public List<Batch> getCurrentBatch(@PathVariable int trainerID) {
 
-		Batch batch = batchService.getCurrentBatchByTrainerID(trainerID);
+		List<Batch> batches = batchService.getCurrentBatchByTrainerID(trainerID);
 
-		if (batch == null) {
+		if (batches == null) {
 			throw new NoBatchException("No current batch exists for trainerID = " + trainerID);
 		}
-		return batch;
+		return batches;
 	}
 
 }

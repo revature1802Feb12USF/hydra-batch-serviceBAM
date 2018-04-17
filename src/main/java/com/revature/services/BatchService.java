@@ -61,7 +61,7 @@ public class BatchService {
 		return batchRepository.findByStartDateLessThanAndEndDateGreaterThan(t, t);
 	}
 
-	public Batch getCurrentBatchByTrainerID(int trainerID) {
+	public List<Batch> getCurrentBatchByTrainerID(int trainerID) {
 		Timestamp t = new Timestamp(System.currentTimeMillis());
 		return batchRepository.findByTrainerIDAndStartDateLessThanAndEndDateGreaterThan(trainerID, t, t);
 	}
