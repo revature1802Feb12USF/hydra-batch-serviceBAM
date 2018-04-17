@@ -1,4 +1,4 @@
-package com.revature.batch.controller;
+package com.revature.tests;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.mockito.Mockito.mock;
@@ -6,8 +6,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Test;
-import com.revature.batch.service.BatchService;
-import com.revature.batch.service.TrainerService;
+
+import com.revature.controller.BatchController;
+import com.revature.controller.BatchCrudController;
+import com.revature.controller.BatchCurrentController;
+import com.revature.controller.BatchFutureController;
+import com.revature.controller.BatchPastController;
+import com.revature.service.BatchService;
+import com.revature.service.TrainerService;
 
 import io.restassured.RestAssured;
 

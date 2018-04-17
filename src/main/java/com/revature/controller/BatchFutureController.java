@@ -1,4 +1,4 @@
-package com.revature.batch.controller;
+package com.revature.controller;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.batch.bean.Batch;
-import com.revature.batch.exception.NoBatchException;
-import com.revature.batch.service.BatchService;
+import com.revature.bean.Batch;
+import com.revature.exception.NoBatchException;
+import com.revature.service.BatchService;
 
 /**
  * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)

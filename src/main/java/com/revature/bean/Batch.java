@@ -1,4 +1,4 @@
-package com.revature.batch.bean;
+package com.revature.bean;
 
 import java.sql.Timestamp;
 
