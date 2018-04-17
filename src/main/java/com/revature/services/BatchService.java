@@ -121,7 +121,7 @@ public class BatchService {
 	 * @return Currently active batche with specific trainer id
 	 * @param id of the trainer
 	 */
-	public Batch getCurrentBatchByTrainerID(int trainerID) {
+	public List<Batch> getCurrentBatchByTrainerID(int trainerID) {
 		Timestamp t = new Timestamp(System.currentTimeMillis());
 		return batchRepository.findByTrainerIDAndStartDateLessThanAndEndDateGreaterThan(trainerID, t, t);
 	}
