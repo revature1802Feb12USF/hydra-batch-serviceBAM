@@ -13,14 +13,14 @@ import com.revature.exceptions.NoBatchException;
 import com.revature.services.BatchService;
 
 /**
- * @author Joshua Boudreau (1802-Matt)
- * @author Sonam Sherpa (1802-Matt)
- * @author Marko Miocic (1802-Matt)
- * 
  * handles ZUUL endpoint /batches
  * 
  * GET( /batches/future/ ) - Returns all future batches
  * GET( /batches/future/{trainerID} ) - Returns the future batches with specific {trainerID}
+ * 
+ * @author Joshua Boudreau (1802-Matt)
+ * @author Sonam Sherpa (1802-Matt)
+ * @author Marko Miocic (1802-Matt)
  */
 @RestController
 @RequestMapping(value = "/future")

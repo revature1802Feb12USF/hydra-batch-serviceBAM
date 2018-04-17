@@ -12,15 +12,15 @@ import com.revature.beans.Batch;
 import com.revature.exceptions.NoBatchException;
 import com.revature.services.BatchService;
 
-/**
- * @author Joshua Boudreau (1802-Matt)
- * @author Sonam Sherpa (1802-Matt)
- * @author Marko Miocic (1802-Matt)
- * 
+/** 
  * handles ZUUL endpoint /batches
  * 
  * GET( /batches/past/ ) - Returns all past batches
  * GET( /batches/past/{trainerID} ) - Returns the past batches with specific {trainerID}
+ * 
+ * @author Joshua Boudreau (1802-Matt)
+ * @author Sonam Sherpa (1802-Matt)
+ * @author Marko Miocic (1802-Matt)
  */
 @RestController
 @RequestMapping(value = "/past")
