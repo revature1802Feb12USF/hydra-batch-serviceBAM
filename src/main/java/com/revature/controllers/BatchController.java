@@ -35,10 +35,11 @@ public class BatchController {
 	}
 
 	/**
+	 * method to get batch by batch id using BatchService.
+	 * 
 	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
 	 * 
-	 * method to get batch by batch id using BatchService.
 	 * @param Http request that holds the batch id as parameter.
 	 * @return a Batch object, Http status 200 otherwise Http status 204.
 	 */
