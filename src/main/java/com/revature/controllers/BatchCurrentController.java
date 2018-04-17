@@ -38,10 +38,11 @@ public class BatchCurrentController {
 	}
 	
 	/**
+	 * method to get all current batches using BatchService
+	 * 
 	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
 	 * 
-	 * method to get all current batches using BatchService
 	 * @return a list of all current batches, Http status 200, otherwise Http status 204
 	 */
 	@GetMapping("/")
@@ -56,17 +57,17 @@ public class BatchCurrentController {
 	}
 
 	/**
+	 * method to get all current batches for a specific trainer using BatchService
+	 * 
 	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
 	 * 
-	 * method to get all current batches for a specific trainer using BatchService
 	 * @param Http request that holds trainer id as a parameter
 	 * @return a Batch object for the current batch for the trainer, 
 	 * 		Http status 200, otherwise Http status 204
 	 */
 	@GetMapping("/{trainerID}")
 	public List<Batch> getCurrentBatch(@PathVariable int trainerID) {
-
 		List<Batch> batches = batchService.getCurrentBatchByTrainerID(trainerID);
 
 		if (batches == null) {

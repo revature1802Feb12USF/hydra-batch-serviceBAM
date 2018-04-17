@@ -40,7 +40,11 @@ Run it as a Spring Boot App
 
 ## Running the tests
 
-There are none :)
+1. Start the hydra-discover-service
+2. Start the hydra-gateway-service
+3. Start the hydra-batch-servie
+4. Run the test file
+	(This runs Rest Assured tests on all methods of service)
 
 ## Built With
 
