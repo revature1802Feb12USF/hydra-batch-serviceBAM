@@ -38,10 +38,11 @@ public class BatchPastController {
 	}
 	
 	/**
+	 * A method to get all past batches using BatchService.
+	 * 
 	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
 	 * 
-	 * A method to get all past batches using BatchService.
 	 * @return a list of all past batches, Http status 200 otherwise Http status 204
 	 */
 	@GetMapping("/")
@@ -56,10 +57,11 @@ public class BatchPastController {
 	}
 
 	/**
+	 * A method to get all past batches for a specific trainer using BatchService.
+	 * 
 	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
 	 *   
-	 * A method to get all past batches for a specific trainer using BatchService.
 	 * @param Http request that holds trainer id as a parameter.
 	 * @return a list of past batches for the trainer, Http status 200 otherwise Http status 204
 	 */
