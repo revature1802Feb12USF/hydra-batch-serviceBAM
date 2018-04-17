@@ -116,11 +116,11 @@
 		</dependency>
 		<!-- Splunk -->
 		<!-- https://mvnrepository.com/artifact/com.splunk.logging/splunk-library-javalogging -->
-		<dependency>
+		<!--<dependency>
 		    <groupId>com.splunk.logging</groupId>
 		    <artifactId>splunk-library-javalogging</artifactId>
 		    <version>1.5.2</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- Swagger -->
 		<dependency>
