@@ -1,4 +1,4 @@
-package com.revature.batch.bean;
+package com.revature.beans;
 
 import java.sql.Timestamp;
 
@@ -11,7 +11,11 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-
+/**
+ * @author Unknown
+ * Last updated by: Joshua Boudreau, Sonam Sherpa, Marko Miocic(1802-Matt)
+ * Last edited: 4/10/18
+ */
 @Entity
 @Table(name = "BATCH")
 public class Batch {
@@ -127,11 +131,6 @@ public class Batch {
 		this.scheduleID = scheduleID;
 	}
 
-	/*
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
-	 * Last edited: 4/10/18
-	 * Batch: 1802-Feb12-java-matt
-	*/
 	@Override
 	public String toString() {
 		return "Batch [\n" + "(Batch ID) \t id =" + id + ",\n" 

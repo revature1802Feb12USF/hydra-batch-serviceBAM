@@ -1,29 +1,21 @@
-package com.revature.batch.controller;
+package com.revature.tests;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.junit.Assert;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
-import com.revature.batch.bean.Batch;
-import com.revature.batch.exception.BatchUpdateException;
-import com.revature.batch.exception.NoBatchException;
-import com.revature.batch.service.BatchService;
-import com.revature.batch.service.TrainerService;
+import com.revature.controllers.BatchController;
+import com.revature.controllers.BatchCrudController;
+import com.revature.controllers.BatchCurrentController;
+import com.revature.controllers.BatchFutureController;
+import com.revature.controllers.BatchPastController;
+import com.revature.services.BatchService;
+import com.revature.services.TrainerService;
 
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 
 public class BatchControllerTests {
 	
@@ -37,9 +29,9 @@ public class BatchControllerTests {
 
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau,  Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
 	 * 
-	 *  Simple Unit Test.  Tests to determine if RestAssured worked. Batch inside H2 database with batchId of 1
+	 * Tests to determine if RestAssured worked. Batch inside H2 database with batchId of 1
 	 */
 	@Test
 	public void testRestAssuredDotThen() {	
@@ -47,9 +39,9 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
 	 * 
-	 *  Rest Assured Test.  Tests to get all batches that are hardcoded
+	 *  Rest Assured Test to get all batches
 	 */
 	@Test
 	public void restAssuredTestGetAllBatches() {
@@ -59,9 +51,9 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
 	 * 
-	 *  Rest Assured Test.  Tests to get all batches by TrainerID. This test test trainerId==50
+	 *  Rest Assured Test to get all batches by TrainerID. (trainerId==50)
 	 */
 	@Test
 	public void restAssuredTestGetBatchByTrainerID() {
@@ -70,10 +62,10 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
 	 * 
-	 *  Rest Assured Test.  Tests to update a batch
-	 *  Changes batch with id of 1 from batch name of 1801 to 1802
+	 *  Rest Assured Test to update a batch
+	 *  	Changes batch with id of 1 from batch name of 1801 to 1802
 	 */
 	@Test
 	public void restAssuredTestUpdateBatch() {	
@@ -91,7 +83,7 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
 	 * 
 	 *  Rest Assured Test to get all current batches
 	 */
@@ -105,10 +97,10 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
 	 * 
 	 *  Rest Assured Test to get all current batches by trainer ID
-	 *  This test tests for trainerID==50
+	 *  	This test tests for trainerID==50
 	 */
 	@Test
 	public void restAssuredTestGetCurrentBatchesByTrainerID() {
@@ -117,7 +109,7 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
 	 * 
 	 *  Rest Assured Test to get all future batches
 	 */
@@ -130,10 +122,10 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
 	 * 
 	 *  Rest Assured Test to get all future batches by trainer ID
-	 *  This test tests for trainerID==50
+	 *  	This test tests for trainerID==50
 	 */
 	@Test
 	public void restAssuredTestGetFutureBatchesByTrainerID() {
@@ -144,7 +136,7 @@ public class BatchControllerTests {
 
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
 	 * 
 	 *  Rest Assured Test to get all past batches
 	 */
@@ -157,10 +149,10 @@ public class BatchControllerTests {
 	}
 	
 	/**
-	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau, Matt's Branch
+	 * @author FEB-1802 Marko Miocic, Sonam Sherpa and Josh Boudreau (1802-Matt)
 	 * 
 	 *  Rest Assured Test to get all past batches by trainer ID
-	 *  This test tests for trainerID==50
+	 *  	This test tests for trainerID==50
 	 */
 	@Test
 	public void restAssuredTestGetPastBatchesByTrainerID() {

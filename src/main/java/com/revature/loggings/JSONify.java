@@ -1,4 +1,4 @@
-package com.revature.batch.logging;
+package com.revature.loggings;
 
 
 /**

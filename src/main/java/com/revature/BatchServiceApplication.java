@@ -1,4 +1,4 @@
-package com.revature.batch;
+package com.revature;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,6 +23,12 @@ public class BatchServiceApplication {
 		SpringApplication.run(BatchServiceApplication.class, args);
 	}
 
+	/**
+	 * @author Marko Miocic (1802-Matt)
+	 * Last updated by: (1802-Matt)
+	 * 
+	 * @return new Swagger_2 Docket object
+	 */
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.any())

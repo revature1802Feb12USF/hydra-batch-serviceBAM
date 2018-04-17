@@ -1,4 +1,4 @@
-package com.revature.batch.controller;
+package com.revature.controllers;
 
 import java.util.List;
 
@@ -8,22 +8,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.batch.bean.Batch;
-import com.revature.batch.exception.NoBatchException;
-import com.revature.batch.service.BatchService;
+import com.revature.beans.Batch;
+import com.revature.exceptions.NoBatchException;
+import com.revature.services.BatchService;
 
 /**
- * 
- * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+ * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
  * Last edited: 4/10/18
- * Batch: 1802-Feb12-java-matt
  * 
  * handles ZUUL endpoint /batches
  * 
- * Endpoints:
- * getCurrentBatches() 		- get - /batches/current/
- * getCurrentBatch() 		- get - /batches/current/{trainerID}
- * Batch: 1802-Feb12-java-matt
+ * GET( /batches/current/ ) - Returns all current batches
+ * GET( /batches/current/{trainerID} ) - Returns the current batches with specific {trainerID}
  */
 @RestController
 @RequestMapping(value = "/current")
@@ -42,14 +38,11 @@ public class BatchCurrentController {
 	}
 	
 	/**
-	 * A method to get all current batches using BatchService.
-	 * 
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
-	 * Batch: 1802-Feb12-java-matt
 	 * 
-	 * @return a list of all current batches, 
-	 * 		Http status 200, otherwise Http status 204
+	 * method to get all current batches using BatchService
+	 * @return a list of all current batches, Http status 200, otherwise Http status 204
 	 */
 	@GetMapping("/")
 	public List<Batch> getCurrentBatches() {
@@ -63,12 +56,10 @@ public class BatchCurrentController {
 	}
 
 	/**
-	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic
+	 * @author Josh Boudreau, Sonam Sherpa, Marko Miocic (1802-Matt)
 	 * Last edited: 4/10/18
-	 * Batch: 1802-Feb12-java-matt
 	 * 
-	 * A method to get all current batches for a specific trainer using BatchService.
-	 * 
+	 * method to get all current batches for a specific trainer using BatchService
 	 * @param Http request that holds trainer id as a parameter
 	 * @return a Batch object for the current batch for the trainer, 
 	 * 		Http status 200, otherwise Http status 204
