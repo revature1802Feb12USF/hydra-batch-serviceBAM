@@ -1,6 +1,7 @@
 package com.revature.tests;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.hasItems;
 import static org.mockito.Mockito.mock;
 import java.util.HashMap;
 import java.util.Map;
@@ -114,7 +115,7 @@ public class BatchControllerTests {
 	 */
 	@Test
 	public void restAssuredTestGetCurrentBatchesByTrainerID() {
-		RestAssured.get("http://localhost:9001/api/v2/batches/current/50").then().body("id", equalTo(4));
+		RestAssured.get("http://localhost:9001/api/v2/batches/current/50").then().body("id", hasItems(4));
 	
 	}
 	
